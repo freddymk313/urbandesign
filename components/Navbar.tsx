@@ -1,6 +1,8 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +21,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h2 className="text-2xl font-bold text-[#F1580C]">Urban Design</h2>
+            <Image 
+              width={160}
+              height={160}
+              src="/logo/Urbandesign-logo-main.png"
+              alt="Urban Design Logo"
+              />
           </div>
 
           {/* Desktop Navigation */}

@@ -89,7 +89,7 @@ const HeroSection = () => {
         ))}
       </div> */}
       {/* Background Elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute -top-6 -left-6 inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#F1580C] rounded-full"></div>
         <div className="absolute top-40 right-20 w-20 h-20 bg-[#F5793B] rounded-lg rotate-45"></div>
         <div className="absolute bottom-40 left-20 w-16 h-16 bg-[#F79A6B] rounded-full"></div>
@@ -98,7 +98,7 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 py-12">
         <motion.div
-          className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)]"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)]"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
@@ -156,8 +156,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="bg-[#F5793B] hover:bg-[#F5793B] text-[#FCFCFC] text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg shadow-[#F5793B]/30"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                
               >
                 Get Your Custom Poster
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -167,8 +166,7 @@ const HeroSection = () => {
                 variant="outline"
                 size="lg"
                 className="border-2 border-[#FCFCFC] text-[#F5793B] hover:bg-[#FCFCFC] hover:text-[#2A2A2A] text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                
               >
                 <Play className="mr-2 h-5 w-5" />
                 See Our Work
@@ -223,20 +221,20 @@ const HeroSection = () => {
                 className="flex gap-6 overflow-x-hidden py-2"
                 style={{ scrollBehavior: 'smooth' }}
               >
-                {portfolioImages.map((idx: any, image: any) => (
+                {portfolioImages.map((element, index) => (
                   <motion.div
-                    key={idx}
+                    key={index}
                     className="flex-shrink-0 w-72 h-80 rounded-xl overflow-hidden shadow-lg bg-[#FCFCFC] relative group"
                     whileHover={{ scale: 1.03 }}
                   >
-                    {/* <Image
-                      src={image.img}
-                      alt={`Portfolio ${idx}`}
+                    <Image
+                      src={element.img}
+                      alt={`Portfolio ${index}`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    /> */}
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2A2A2A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-[#FCFCFC] font-medium">Project {idx}</span>
+                      <span className="text-[#FCFCFC] font-medium">Project {index}</span>
                     </div>
                   </motion.div>
                 ))}

@@ -4,7 +4,7 @@ import { ArrowRight, Check, Play } from "lucide-react"
 import { useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Link from "next/link"
+import { Variants } from "framer-motion"
 
 const portfolioImages: any = [
   { img:"/portfolio/1.jpg" },
@@ -35,7 +35,7 @@ const HeroSection = () => {
   }, [])
 
   // Variantes d'animation
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -46,7 +46,7 @@ const HeroSection = () => {
     }
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -221,7 +221,7 @@ const HeroSection = () => {
                 className="flex gap-6 overflow-x-hidden py-2"
                 style={{ scrollBehavior: 'smooth' }}
               >
-                {portfolioImages.map((element, index) => (
+                {portfolioImages.map((element: any, index: any) => (
                   <motion.div
                     key={index}
                     className="flex-shrink-0 w-72 h-80 rounded-xl overflow-hidden shadow-lg bg-[#FCFCFC] relative group"

@@ -39,15 +39,11 @@ const Navbar = () => {
         delay: 0.2
       }
     },
-    hover: {
-      scale: 1.05,
-      transition: { type: "spring", stiffness: 400 }
-    }
   }
 
   const itemVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: (i) => ({
+    visible: (i: any) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -57,15 +53,15 @@ const Navbar = () => {
       }
     }),
     hover: {
-      color: "#D90429",
+      color: "#F5793B",
       transition: { duration: 0.2 }
     }
   }
 
-  const underlineVariants = {
-    hidden: { width: 0 },
-    hovered: { width: "100%" }
-  }
+  // const underlineVariants = {
+  //   hidden: { width: 0 },
+  //   hovered: { width: "100%" }
+  // }
 
   const menuVariants = {
     open: {
@@ -153,9 +149,9 @@ const Navbar = () => {
                   {item.label}
                 </Link>
                 <motion.div
-                  variants={underlineVariants}
+                  // variants={underlineVariants}
                   animate={hoveredItem === item.label ? "hovered" : "hidden"}
-                  className="absolute bottom-0 left-0 h-0.5 bg-[#D90429] origin-left"
+                  className="absolute bottom-0 left-0 h-0.5 bg-[#F5793B] origin-left"
                   transition={{ type: "spring", stiffness: 300 }}
                 />
               </motion.div>
@@ -170,10 +166,10 @@ const Navbar = () => {
             transition={{ delay: 0.4, type: "spring" }}
           >
             <Button 
-              className="bg-primary hover:bg-[#EF233C] text-white font-semibold px-6 py-2 rounded-none transition-all hover:shadow-lg hover:shadow-red-100"
+              className="bg-primary hover:bg-[#F5793B] text-white *font-semibold px-6 py-5 rounded-none transition-all hover:shadow-lg hover:shadow-red-100"
               asChild
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              // whileHover={{ scale: 1.05 }}
+              // whileTap={{ scale: 0.95 }}
             >
               <Link href="#contact">
                 Get Started
@@ -189,7 +185,7 @@ const Navbar = () => {
           >
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-800 hover:text-[#D90429] hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-md text-gray-800 hover:bg-gray-100 transition-colors"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -215,7 +211,7 @@ const Navbar = () => {
                   >
                     <Link
                       href={item.href}
-                      className="block py-2 text-gray-800 hover:text-[#D90429] font-medium transition-colors border-b border-gray-100 last:border-0"
+                      className="block py-2 text-gray-800 hover:text-[#F5793B] font-medium transition-colors border-b border-gray-100 last:border-0"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
@@ -224,7 +220,7 @@ const Navbar = () => {
                 ))}
                 <motion.div variants={menuItemVariants}>
                   <Button 
-                    className="bg-primary hover:bg-[#EF233C] text-white font-semibold w-full mt-2 py-3 rounded-none transition-all"
+                    className="bg-primary hover:bg-[#F5793B] text-white font-semibold w-full mt-2 py-5 rounded-none transition-all"
                     asChild
                   >
                     <Link href="#contact" onClick={() => setIsMenuOpen(false)}>

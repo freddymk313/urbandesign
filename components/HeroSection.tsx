@@ -1,17 +1,17 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, Check, Play } from "lucide-react"
 import { useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
-const portfolioImages = [
-  "/lovable-uploads/94a0b898-9a74-4450-9af6-b02711581657.png",
-  "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=800&h=600&fit=crop",
+const portfolioImages: any = [
+  { img:"/portfolio/1.jpg" },
+  { img:"/portfolio/2.jpg" },
+  { img:"/portfolio/3.jpg" },
+  { img:"/portfolio/4.jpg" },
+  { img:"/portfolio/5.jpg" },
 ]
 
 const HeroSection = () => {
@@ -59,12 +59,12 @@ const HeroSection = () => {
   }
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="relative min-h-screen bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] overflow-hidden pt-20"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden opacity-10">
+      {/* <div className="absolute inset-0 overflow-hidden opacity-10">
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
@@ -87,25 +87,32 @@ const HeroSection = () => {
             }}
           />
         ))}
+      </div> */}
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#F1580C] rounded-full"></div>
+        <div className="absolute top-40 right-20 w-20 h-20 bg-[#F5793B] rounded-lg rotate-45"></div>
+        <div className="absolute bottom-40 left-20 w-16 h-16 bg-[#F79A6B] rounded-full"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 border-2 border-[#F5793B] rounded-lg rotate-12"></div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        <motion.div 
+        <motion.div
           className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)]"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             className="text-[#FCFCFC] space-y-8 lg:pr-8"
             variants={itemVariants}
           >
-            <motion.div 
+            <motion.div
               className="space-y-2"
               variants={itemVariants}
             >
-              <motion.div 
+              <motion.div
                 className="inline-block px-4 py-2 bg-[#FCFCFC]/10 rounded-full text-sm font-medium backdrop-blur-sm border border-[#FCFCFC]/20"
                 whileHover={{ scale: 1.05 }}
               >
@@ -113,14 +120,14 @@ const HeroSection = () => {
               </motion.div>
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 <motion.span className="block">Turn Your Ideas Into</motion.span>
-                <motion.span 
+                <motion.span
                   className="block text-[#FCFCFC] drop-shadow-lg"
                   whileHover={{ x: 5 }}
                 >
                   Posters That
                 </motion.span>
-                <motion.span 
-                  className="block bg-gradient-to-r from-[#FCFCFC] to-[#D90429] bg-clip-text text-transparent"
+                <motion.span
+                  className="block bg-gradient-to-r from-[#FCFCFC] to-[#F5793B] bg-clip-text text-transparent"
                   animate={{
                     backgroundPosition: ['0% 50%', '100% 50%'],
                   }}
@@ -135,20 +142,20 @@ const HeroSection = () => {
               </h1>
             </motion.div>
 
-            <motion.p 
+            <motion.p
               className="text-xl lg:text-2xl leading-relaxed text-[#FCFCFC]/90 max-w-xl"
               variants={itemVariants}
             >
               At Urban Design, our creative team crafts stunning custom posters that make your brand unforgettable.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4"
               variants={itemVariants}
             >
-              <Button 
-                size="lg" 
-                className="bg-[#F5793B] hover:bg-[#EF233C] text-[#FCFCFC] text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg shadow-[#D90429]/30 text-white"
+              <Button
+                size="lg"
+                className="bg-[#F5793B] hover:bg-[#F5793B] text-[#FCFCFC] text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg shadow-[#F5793B]/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -156,9 +163,9 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
 
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="border-2 border-[#FCFCFC] text-[#F5793B] hover:bg-[#FCFCFC] hover:text-[#2A2A2A] text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -169,7 +176,7 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Trust Indicators */}
-            <motion.div 
+            <motion.div
               className="flex flex-wrap items-center gap-8 pt-8"
               variants={itemVariants}
             >
@@ -178,53 +185,58 @@ const HeroSection = () => {
                 { value: "1000+", label: "Posters Created" },
                 { value: "100%", label: "Human-Made" }
               ].map((item, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   className="text-center"
                   whileHover={{ y: -5 }}
                 >
-                  <div className="text-3xl font-bold text-[#D90429]">{item.value}</div>
-                  <div className="text-sm text-[#FCFCFC]/80">{item.label}</div>
+                  {/* <div className="text-3xl font-bold text-[#F5793B]">{item.value}</div> */}
+                  <div className="*text-sm text-[#FCFCFC]/80 flex itemes-center justify-center">
+                    <div className="w-5 h-5 bg-[#F5793B] rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                      <Check className="h-3 w-3 text-[#fcfcfc]" />
+                    </div>
+                    <div><span>{item.label}</span></div>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
 
           {/* Right Content - Portfolio Showcase */}
-          <motion.div 
+          <motion.div
             className="relative"
             variants={itemVariants}
           >
-            <motion.div 
+            <motion.div
               className="relative overflow-hidden rounded-2xl shadow-2xl bg-[#2A2A2A] border border-[#FCFCFC]/10 p-6"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="mb-4">
-                <div className="inline-block px-4 py-2 bg-[#D90429] rounded-full text-[#FCFCFC] font-semibold text-sm">
+                <div className="inline-block px-4 py-2 bg-[#F5793B] rounded-full text-[#FCFCFC] font-semibold text-sm">
                   Live Portfolio
                 </div>
               </div>
 
-              <div 
+              <div
                 id="portfolio-scroll"
                 className="flex gap-6 overflow-x-hidden py-2"
                 style={{ scrollBehavior: 'smooth' }}
               >
-                {[...portfolioImages, ...portfolioImages].map((index, image) => (
+                {portfolioImages.map((idx: any, image: any) => (
                   <motion.div
-                    key={index}
+                    key={idx}
                     className="flex-shrink-0 w-72 h-80 rounded-xl overflow-hidden shadow-lg bg-[#FCFCFC] relative group"
                     whileHover={{ scale: 1.03 }}
                   >
-                    <Image 
-                      src={image} 
-                      alt={`Portfolio ${index + 1}`}
+                    {/* <Image
+                      src={image.img}
+                      alt={`Portfolio ${idx}`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    /> */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2A2A2A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-[#FCFCFC] font-medium">Project {index + 1}</span>
+                      <span className="text-[#FCFCFC] font-medium">Project {idx}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -232,7 +244,7 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Floating Elements */}
-            <motion.div 
+            <motion.div
               className="absolute -top-6 -left-6 bg-[#FCFCFC] p-3 rounded-xl shadow-xl border border-[#FCFCFC]/20"
               animate={{
                 y: [0, -10, 0],
@@ -243,12 +255,12 @@ const HeroSection = () => {
               }}
             >
               <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-[#D90429] rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-[#2A2A2A]">Designing Now</span>
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="absolute -bottom-6 -right-6 bg-[#FCFCFC] p-5 rounded-xl shadow-xl border border-[#FCFCFC]/20"
               animate={{
                 rotate: [0, 5, -5, 0],
@@ -259,7 +271,7 @@ const HeroSection = () => {
               }}
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#D90429]">24h</div>
+                <div className="text-2xl font-bold text-[#F5793B]">24h</div>
                 <div className="text-xs text-[#2A2A2A]/80">Avg. Delivery</div>
               </div>
             </motion.div>

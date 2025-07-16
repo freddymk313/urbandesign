@@ -4,47 +4,47 @@ import { useState } from "react";
 const portfolioItems = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=800&fit=crop",
+    image: "/portfolio/1.jpg",
     category: "Product Ads"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600&h=800&fit=crop",
+    image: "/portfolio/2.jpg",
     category: "Service Promotions"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&h=800&fit=crop",
+    image: "/portfolio/3.jpg",
     category: "Birthdays"
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=600&h=800&fit=crop",
+    image: "/portfolio/4.jpg",
     category: "Product Ads"
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1594736797933-d0d29ac32393?w=600&h=800&fit=crop",
+    image: "/portfolio/5.jpg",
     category: "Service Promotions"
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&h=800&fit=crop",
+    image: "/portfolio/6.jpg",
     category: "Birthdays"
   },
   {
     id: 7,
-    image: "https://images.unsplash.com/photo-1626785774625-0b1c2c4eab67?w=600&h=800&fit=crop",
+    image: "/portfolio/7.jpg",
     category: "Product Ads"
   },
   {
     id: 8,
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=800&fit=crop",
+    image: "/portfolio/8.jpg",
     category: "Service Promotions"
   },
   {
     id: 9,
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=800&fit=crop",
+    image: "/portfolio/9.jpg",
     category: "Birthdays"
   }
 ];
@@ -120,10 +120,10 @@ const PortfolioShowcase = () => {
                 </div>
 
                 {/* Hover Effect Corners */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-l-3 border-t-3 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 right-4 w-8 h-8 border-r-3 border-t-3 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-4 left-4 w-8 h-8 border-l-3 border-b-3 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-3 border-b-3 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 left-4 w-8 h-8 border-l-3 border-t-3 rounded-l-lg rounded-b-none border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 w-8 h-8 border-r-3 border-t-3 rounded-r-lg rounded-b-none border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-l-3 border-b-3 rounded-b-lg rounded-l-none rounded-r-none border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-3 border-b-3 rounded-b-lg rounded-t-none rounded-l-none border-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
           ))}

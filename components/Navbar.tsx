@@ -10,7 +10,7 @@ import type { Variants } from "framer-motion"
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [hoveredItem, setHoveredItem] = useState(null)
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const navRef = useRef(null)
 
   useEffect(() => {

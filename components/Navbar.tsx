@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
+import type { Variants } from "framer-motion"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -28,7 +29,7 @@ const Navbar = () => {
     { label: "Contact", href: "#contact" },
   ]
 
-  const logoVariants = {
+  const logoVariants: Variants = {
     initial: { opacity: 0, x: -20 },
     animate: { 
       opacity: 1, 
@@ -41,7 +42,7 @@ const Navbar = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: (i: any) => ({
       opacity: 1,
@@ -63,7 +64,7 @@ const Navbar = () => {
   //   hovered: { width: "100%" }
   // }
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     open: {
       height: "auto",
       opacity: 1,
